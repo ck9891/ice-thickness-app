@@ -1,2 +1,1 @@
-# ice-thickness-app
-A web application to plot and share ice thickness data
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
