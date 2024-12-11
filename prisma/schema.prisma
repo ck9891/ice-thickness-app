@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  username      String    @unique
+  password_hash String
+  email         String    @unique
+  created_at    DateTime  @default(now())
+  IceThicknessData IceThicknessData[]
+}
+
+model IceThicknessData {
+  id         Int       @id @default(autoincrement())
+  user_id    Int
+  latitude   Float
+  longitude  Float
+  thickness  Float
+  timestamp  DateTime  @default(now())
+  user       User      @relation(fields: [user_id], references: [id])
+}
+
+model AggregatedIceThicknessData {
+  id               Int       @id @default(autoincrement())
+  latitude         Float
+  longitude        Float
+  average_thickness Float
+  time_period      String
+}
