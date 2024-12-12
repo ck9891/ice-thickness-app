@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+body {
+  @apply font-sans m-0 p-0;
+}
+
+header {
+  @apply bg-blue-500 text-white p-4 text-center;
+}
+
+main {
+  @apply flex flex-col items-center p-4;
+}
+
+#map {
+  @apply w-full h-96 mb-4;
+}
+
+#controls {
+  @apply w-full max-w-md;
+}
+
+form {
+  @apply bg-gray-100 border border-gray-300 rounded p-4 mb-4;
+}
+
+form h2 {
+  @apply mt-0;
+}
+
+label {
+  @apply block mb-2;
+}
+
+input {
+  @apply w-full p-2 mb-4 border border-gray-300 rounded;
+}
+
+button {
+  @apply w-full p-2 bg-blue-500 text-white border-none rounded cursor-pointer;
+}
+
+button:hover {
+  @apply bg-blue-700;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  main {
+    @apply flex-row justify-between;
+  }
+
+  #map {
+    @apply w-7/12 h-128;
+  }
+
+  #controls {
+    @apply w-1/4;
+  }
+}
+
+@media (min-width: 1024px) {
+  #map {
+    @apply h-144;
+  }
+}
